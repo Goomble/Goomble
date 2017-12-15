@@ -1,0 +1,120 @@
+<!--Reference: https://startbootstrap.com -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Homework 3</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="css/font-awesome.css" rel="stylesheet">
+    
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/portfolio-item.css" rel="stylesheet">
+    
+    <!-- Graph's CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    
+    <!-- Social Buttons CSS -->
+    <link href="css/bootstrap-social.css" rel="stylesheet">
+</head>
+
+<body>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Portfolio Item Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Homework 3
+                    <small>Tree Maintance Map</small>
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Portfolio Item Row -->
+        <div class="row">
+                <h1 style="text-align:left">San Francisco's Tree Maintance by District</h1>
+                <svg width="960" height="600"></svg>
+                <script src="js/graph.js"></script>
+            <div>
+                <hr/>
+                <h3>Project Description</h3>
+                <p>Map of San Francisco (bounded by supervisor districts) that displays the location of each occurence of tree maintance.</p>
+                <hr/>
+                <h3>Dataset Overview</h3>
+                <p>The data was collected and posted by <a href="https://data.sfgov.org/City-Infrastructure/Tree-Maintenance-2016/d9d2-cuwu">SF Open Data</a> as one of their reports, and it stores all the "SF311 cases created since 7/1/2008 with location information". I used D3 and Javascript to retrieve the location information from a "point" category, and then I placed a circle to <a href ="">District Map of San Francisco</a> for each point. Out of all the data provided, I chose 5 categoris to display in tooltip: "Source" ("how the service request was made"), "Address", "Neighborhood", "Category" ("The Human readable name of the specific service request type"), "Status" ("The current status of the service request").</p>
+                <hr/>
+                <h3>Map Interpretation</h3>
+                <p>This map displays all the places where tree maintance has occured in San Franisco, since July 1st, 2008, where every "source" ("how the service request was made") is encoded by color. The visualization is highly interactive, allowing the user to filter the data by both source and district. By hovering over each district on the map, we can see its number, and if we click on the district, we'll see all of the places where tree maintance occured in the selected district. We can also filter the data by "source": hovering over the color legend on the left of the graph gives us a preview of all the locations where the tree maintance was requested with the selected source; clicking the color legend will draw the points on the map. <text style="font-weight:bold">Warning: To avoid confusion, you can only apply one filter (either district or source) at a time. If you want to change the filter, hide all the points first by clicking "Hide All" button located below the color legend.</text></p>
+                <hr/>
+                <h3>Learining Outcomes</h3>
+                <p>By playing with this map, we can depict a lot of trends from it. For instance, we can see that the sources for most of the tree maintance cases were "Voice In" and "Open311", which makes sense, since those are resources specifically dedicated for the city's maintance, and everyone can leave the request for it. However, the majority (2 out of 3) of occurences of tree maintance in Treasure Island were reported by Integrated Agency, meaning that the community there is not actively reporting, when a tree maintance is needed. Moreover, filtering the data by district tells us that most of the tree maintance occured in districts 5 and 8. These districts are not the biggest on the map, but they might have a larger quantity of trees.</p>
+                <hr/>
+            </div>
+            <!-- Reference: http://bootsnipp.com/snippets/featured/profile-card -->
+            <div class ="card hovercard">
+                <div class="cardheader">
+                    <h2>About the author</h2>
+                </div>
+                <div class="avatar">
+                    <img alt="" src="resources/profile.jpg">
+                </div>
+                <div>
+                    <div class="title">
+                        <h3>Arseniy Novitskiy</h3>
+                    </div>
+                    <div class="desc">Senior CS major at <a href="http://usfca.edu">USF</a></div>
+                    <div class="desc">Passionate Web Designer</div>
+                    <div class="desc">Tech geek</div>
+                    <br/>
+                </div>
+                    <a class="btn btn-primary btn-linkedin" href="https://www.linkedin.com/in/goomble/">
+                        <span class="fa fa-linkedin"></span>
+                    </a>
+                    <a class="btn btn-primary btn-email" href="mailto:anovitskiy@dons.usfca.edu?Subject=Map%20Visualization" target="_top">
+                        <i class="fa fa-envelope"></i>
+                    </a>
+                    <a class="btn btn-primary btn-github"
+                       href="https://github.com/Goomble">
+                        <i class="fa fa-github"></i>
+                    </a>
+                    <hr/>
+            </div>
+    </div>
+        <!-- /.row -->            
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Arseniy Novitskiy</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
